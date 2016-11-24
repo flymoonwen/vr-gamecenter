@@ -11,9 +11,9 @@ public class GameCenter {
 
 
 
+     System.out.println("Main");
 
-
-
+        System.out.println("Main");
     }
 
 }
