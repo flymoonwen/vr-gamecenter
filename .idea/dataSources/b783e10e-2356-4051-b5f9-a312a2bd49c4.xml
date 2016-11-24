@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - gameserver-db@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="gameserver-db">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="sakila"/>
+    <schema id="6" name="sys"/>
+    <schema id="7" name="world"/>
+    <table id="8" parent="1" name="armor"/>
+    <table id="9" parent="1" name="blocks"/>
+    <table id="10" parent="1" name="family"/>
+    <table id="11" parent="1" name="friends"/>
+    <table id="12" parent="1" name="inventory"/>
+    <table id="13" parent="1" name="jewelry"/>
+    <table id="14" parent="1" name="mail"/>
+    <table id="15" parent="1" name="player_map"/>
+    <table id="16" parent="1" name="player_quests"/>
+    <table id="17" parent="1" name="player_settings"/>
+    <table id="18" parent="1" name="player_stats"/>
+    <table id="19" parent="1" name="players"/>
+    <table id="20" parent="1" name="sequence_id"/>
+    <table id="21" parent="1" name="weapons"/>
+    <table id="22" parent="1" name="user"/>
+    <column id="23" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="24" parent="8" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="25" parent="8" name="icon">
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <column id="26" parent="8" name="descibe">
+      <data-type>varchar(500)|0</data-type>
+    </column>
+    <column id="27" parent="8" name="bodypart">
+      <comment>éƒ¨ä½&#x8d;</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="28" parent="8" name="armorType">
+      <comment>ç§&#x8d;ç±»</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="29" parent="8" name="useLevel">
+      <comment>çº§åˆ«</comment>
+      <mandatory>1</mandatory>
+      <data-type>tinyint(3)|0</data-type>
+    </column>
+    <column id="30" parent="8" name="armorCon">
+      <comment>è£…å¤‡æ&#x9d;¡ä»¶</comment>
+      <data-type>tinyint(3)|0</data-type>
+    </column>
+    <column id="31" parent="8" name="curDur">
+      <comment>å½“å‰&#x8d;è€&#x90;ä¹…åº¦</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="32" parent="8" name="maxDur">
+      <comment>æœ€å¤§è€&#x90;ä¹…åº¦</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="33" parent="8" name="hp">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="34" parent="8" name="mp">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="35" parent="8" name="def">
+      <comment>é˜²å¾¡</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="36" parent="8" name="dodge">
+      <comment>é—ªé&#x81;¿</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="37" parent="8" name="repel">
+      <comment>å&#x8f;&#x8d;å‡»</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="38" parent="8" name="price">
+      <data-type>double|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="39" parent="8" name="shop">
+      <data-type>double|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="40" parent="8" name="isEnchant">
+      <comment>æ˜¯å&#x90;¦å&#x8f;¯å¼ºåŒ–</comment>
+      <data-type>varchar(5)|0</data-type>
+      <default-expression>&apos;false&apos;</default-expression>
+    </column>
+    <column id="41" parent="8" name="bindRule">
+      <comment>ç»‘å®šè§„åˆ™</comment>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="42" parent="8" name="suitId">
+      <comment>å¥—è£…</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="43" parent="8" name="NewIndex1">
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="44" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="45" parent="9" name="player">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="46" parent="9" name="blocked_player">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="47" parent="9" name="reason">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+      <default-expression>&apos;&apos;</default-expression>
+    </column>
+    <index id="48" parent="9" name="blocked_player">
+      <columns>blocked_player</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="49" parent="9" name="PRIMARY">
+      <columns>player
+blocked_player</columns>
+      <primary>1</primary>
+    </key>
+    <column id="50" parent="10" name="account_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="51" parent="10" name="family_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <key id="52" parent="10" name="PRIMARY">
+      <columns>account_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="53" parent="11" name="playerId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="54" parent="11" name="friendId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="55" parent="11" name="PRIMARY">
+      <columns>playerId
+friendId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="56" parent="12" name="itemUniqueId">
+      <comment>æ¸…å&#x8d;•ID</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="57" parent="12" name="itemId">
+      <comment>ç‰©å“&#x81;ID</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="58" parent="12" name="itemCount">
+      <comment>å&#x8f; åŠ æ•°é‡&#x8f;</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="59" parent="12" name="itemColor">
+      <comment>ç‰©å“&#x81;å“&#x81;çº§</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="60" parent="12" name="charId">
+      <comment>è§’è‰²ID</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="61" parent="12" name="isEquiped">
+      <comment>æ˜¯å&#x90;¦æ˜¯è£…å¤‡</comment>
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="62" parent="12" name="slot">
+      <comment>æ&#x8f;’æ§½ä¸ªæ•°</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="63" parent="12" name="itemLocation">
+      <comment>ç‰©å“&#x81;ä½&#x8d;ç½®ï¼ˆä»“åº“ï¼ŒèƒŒåŒ…ï¼Œè§’è‰²èº«ä¸Šï¼‰</comment>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="64" parent="12" name="PRIMARY">
+      <columns>itemUniqueId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="65" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="66" parent="13" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="67" parent="13" name="icon">
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <column id="68" parent="13" name="descibe">
+      <data-type>varchar(500)|0</data-type>
+    </column>
+    <column id="69" parent="13" name="bodypart">
+      <comment>éƒ¨ä½&#x8d;</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="70" parent="13" name="jewelryType">
+      <comment>ç§&#x8d;ç±»</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="71" parent="13" name="useLevel">
+      <comment>çº§åˆ«</comment>
+      <mandatory>1</mandatory>
+      <data-type>tinyint(3)|0</data-type>
+    </column>
+    <column id="72" parent="13" name="jewelryCon">
+      <comment>è£…å¤‡æ&#x9d;¡ä»¶</comment>
+      <data-type>tinyint(3)|0</data-type>
+    </column>
+    <column id="73" parent="13" name="curDur">
+      <comment>å½“å‰&#x8d;è€&#x90;ä¹…åº¦</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="74" parent="13" name="maxDur">
+      <comment>æœ€å¤§è€&#x90;ä¹…åº¦</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="75" parent="13" name="hp">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="76" parent="13" name="mp">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="77" parent="13" name="men">
+      <comment>ç²¾ç¥ž</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="78" parent="13" name="acc">
+      <comment>å‘½ä¸­</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="79" parent="13" name="crit">
+      <comment>æš´å‡»</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="80" parent="13" name="dodge">
+      <comment>é—ªé&#x81;¿</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="81" parent="13" name="repel">
+      <comment>å&#x8f;&#x8d;å‡»</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="82" parent="13" name="price">
+      <data-type>double|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="83" parent="13" name="shop">
+      <data-type>double|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="84" parent="13" name="isEnchant">
+      <comment>æ˜¯å&#x90;¦å&#x8f;¯å¼ºåŒ–</comment>
+      <data-type>varchar(5)|0</data-type>
+      <default-expression>&apos;false&apos;</default-expression>
+    </column>
+    <column id="85" parent="13" name="bindRule">
+      <comment>ç»‘å®šè§„åˆ™</comment>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <index id="86" parent="13" name="NewIndex1">
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="87" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="88" parent="14" name="mailUniqueId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="89" parent="14" name="mailRecipientId">
+      <comment>é‚®ä»¶æŽ¥å&#x8f;—äººID</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="90" parent="14" name="senderName">
+      <comment>å&#x8f;‘é€&#x81;äººçš„å&#x90;&#x8d;ç§°</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <column id="91" parent="14" name="mailTitle">
+      <comment>é‚®ä»¶æ ‡é¢˜</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="92" parent="14" name="mailMessage">
+      <comment>é‚®ä»¶å†…å®¹</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(1000)|0</data-type>
+    </column>
+    <column id="93" parent="14" name="unread">
+      <comment>æ˜¯å&#x90;¦æŸ¥çœ‹è¿‡</comment>
+      <mandatory>1</mandatory>
+      <data-type>tinyint(4)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="94" parent="14" name="mailType">
+      <comment>é‚®ä»¶ç±»åž‹ï¼Œå…¬ä¼šï¼Œä¸ªäººé‚®ä»¶ï¼Œäº¤æ˜“</comment>
+      <mandatory>1</mandatory>
+      <data-type>tinyint(4)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="95" parent="14" name="recievedTime">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <index id="96" parent="14" name="mailRecipientId">
+      <columns>mailRecipientId</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="97" parent="14" name="PRIMARY">
+      <columns>mailUniqueId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="98" parent="15" name="playerid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="99" parent="15" name="map_id">
+      <data-type>smallint(5)|0</data-type>
+    </column>
+    <column id="100" parent="15" name="x">
+      <data-type>smallint(5)|0</data-type>
+    </column>
+    <column id="101" parent="15" name="y">
+      <data-type>smallint(5)|0</data-type>
+    </column>
+    <column id="102" parent="15" name="lastDirection">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <key id="103" parent="15" name="PRIMARY">
+      <columns>playerid</columns>
+      <primary>1</primary>
+    </key>
+    <column id="104" parent="16" name="player_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="105" parent="16" name="quest_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="106" parent="16" name="status">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+      <default-expression>&apos;NONE&apos;</default-expression>
+    </column>
+    <column id="107" parent="16" name="quest_vars">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="108" parent="16" name="complete_count">
+      <mandatory>1</mandatory>
+      <data-type>int(3) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="109" parent="16" name="PRIMARY">
+      <columns>player_id
+quest_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="110" parent="17" name="player_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="111" parent="17" name="settings_type">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="112" parent="17" name="settings">
+      <mandatory>1</mandatory>
+      <data-type>blob|0</data-type>
+    </column>
+    <key id="113" parent="17" name="PRIMARY">
+      <columns>player_id
+settings_type</columns>
+      <primary>1</primary>
+    </key>
+    <column id="114" parent="18" name="playerId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="115" parent="18" name="str">
+      <comment>åŠ›é‡&#x8f;</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="116" parent="18" name="con">
+      <comment>ä½“è´¨</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="117" parent="18" name="_int">
+      <comment>æ™ºåŠ›</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="118" parent="18" name="handy">
+      <comment>ç&#x81;µå·§</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="119" parent="18" name="dex">
+      <comment>æ•&#x8f;æ&#x8d;·</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="120" parent="18" name="hp">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="121" parent="18" name="mp">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="122" parent="18" name="attack">
+      <comment>æ”»å‡»åŠ›</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="123" parent="18" name="def">
+      <comment>é˜²å¾¡åŠ›</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="124" parent="18" name="men">
+      <comment>ç²¾ç¥ž</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="125" parent="18" name="dodge">
+      <comment>èº²é&#x81;¿</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="126" parent="18" name="acc">
+      <comment>å‘½ä¸­</comment>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="127" parent="18" name="crit">
+      <comment>æš´å‡»</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="128" parent="18" name="PRIMARY">
+      <columns>playerId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="129" parent="19" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="130" parent="19" name="name">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="131" parent="19" name="account_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="132" parent="19" name="account_name">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="133" parent="19" name="exp">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="134" parent="19" name="level">
+      <data-type>tinyint(3)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="135" parent="19" name="gender">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="136" parent="19" name="player_class">
+      <data-type>enum(&apos;NEWSPLAYER&apos;)|0</data-type>
+    </column>
+    <column id="137" parent="19" name="creation_date">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+    </column>
+    <column id="138" parent="19" name="deletion_date">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="139" parent="19" name="last_online">
+      <data-type>timestamp|0</data-type>
+      <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+    </column>
+    <column id="140" parent="19" name="warehouse_size">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="141" parent="19" name="title_id">
+      <mandatory>1</mandatory>
+      <data-type>int(3)|0</data-type>
+      <default-expression>&apos;-1&apos;</default-expression>
+    </column>
+    <column id="142" parent="19" name="vitalityPoint">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="143" parent="19" name="headPic">
+      <data-type>tinyint(2)|0</data-type>
+    </column>
+    <column id="144" parent="19" name="face">
+      <data-type>tinyint(2)|0</data-type>
+    </column>
+    <index id="145" parent="19" name="account_id">
+      <columns>account_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="146" parent="19" name="name_unique">
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="147" parent="19" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="148" parent="19" name="name_unique">
+      <columns>name</columns>
+      <underlying-index>name_unique</underlying-index>
+    </key>
+    <column id="149" parent="20" name="idType">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="150" parent="20" name="id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="151" parent="20" name="PRIMARY">
+      <columns>idType</columns>
+      <primary>1</primary>
+    </key>
+    <column id="152" parent="21" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="153" parent="21" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="154" parent="21" name="icon">
+      <comment>å›¾æ ‡</comment>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="155" parent="21" name="describe">
+      <comment>æ&#x8f;&#x8f;è¿°</comment>
+      <data-type>varchar(500)|0</data-type>
+    </column>
+    <column id="156" parent="21" name="weaponType">
+      <comment>æ­¦å™¨ç§&#x8d;ç±»</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="157" parent="21" name="useLevel">
+      <comment>ä½¿ç”¨çº§åˆ«</comment>
+      <data-type>tinyint(3)|0</data-type>
+    </column>
+    <column id="158" parent="21" name="weaponCon">
+      <comment>è£…å¤‡æ&#x9d;¡ä»¶</comment>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="159" parent="21" name="curDur">
+      <comment>å½“å‰&#x8d;è€&#x90;ä¹…åº¦</comment>
+      <data-type>tinyint(4)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="160" parent="21" name="maxDur">
+      <comment>æœ€å¤§è€&#x90;ä¹…åº¦</comment>
+      <data-type>tinyint(4)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="161" parent="21" name="attack">
+      <comment>æ”»å‡»</comment>
+      <data-type>int(11) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="162" parent="21" name="men">
+      <comment>ç²¾ç¥ž</comment>
+      <data-type>int(11) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="163" parent="21" name="acc">
+      <comment>å‘½ä¸­</comment>
+      <data-type>int(11) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="164" parent="21" name="crit">
+      <comment>æš´å‡»</comment>
+      <data-type>int(11) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="165" parent="21" name="price">
+      <comment>ä»·æ ¼</comment>
+      <data-type>decimal(12) unsigned|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="166" parent="21" name="shop">
+      <comment>å•†åŸŽ</comment>
+      <data-type>decimal(12)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="167" parent="21" name="isEnchant">
+      <comment>æ˜¯å&#x90;¦å&#x8f;¯å¼ºåŒ–</comment>
+      <data-type>varchar(5)|0</data-type>
+      <default-expression>&apos;false&apos;</default-expression>
+    </column>
+    <column id="168" parent="21" name="bindRule">
+      <comment>ç»‘å®šè§„åˆ™</comment>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <index id="169" parent="21" name="NewIndex1">
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="170" parent="21" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="171" parent="22" name="id">
+      <data-type>bigint(10)|0</data-type>
+    </column>
+  </database-model>
+</dataSource>

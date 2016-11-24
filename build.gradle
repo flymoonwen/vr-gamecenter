@@ -14,9 +14,10 @@ repositories {
 dependencies {
 
     compile(
-            'org.hibernate:hibernate-core:5.2.4.Final',
+            'org.hibernate:hibernate-core:4.3.6.Final',
             'org.springframework:spring-core:4.1.6.RELEASE',
             "javax.servlet:javax.servlet-api:3.1-b07",
+            "mysql:mysql-connector-java:5.1.24"
     )
 
 
@@ -44,6 +45,6 @@ task copyJar(type:Copy){
 
 //把JAR复制到目标目录
 task release(type: Copy,dependsOn: [build,copyJar]) {
-    // from 'conf'
-// into ('build/libs/eachend/conf') // 目标位置
+     from 'conf'
+     into ('build/libs/conf') // 目标位置
 }
