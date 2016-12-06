@@ -2,6 +2,7 @@ package gamecenter;
 
 
 import gamecenter.db.entity.ArmorEntity;
+import gamecenter.db.entity.PlayerDataEntity;
 import gamecenter.db.entity.UserEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,17 +16,15 @@ public class GameCenter {
     public static void main(String[] args) {
 
 
-        ArmorEntity a = new ArmorEntity();
-        a.setDescibe("ArmorEntity");
-
-        UserEntity u = new UserEntity();
-        u.setId(1000l);
+        PlayerDataEntity playerDataEntity = new PlayerDataEntity();
+        playerDataEntity.setPlayerId(111);
+        playerDataEntity.setUsername("test111");
 
         Configuration cfg = new Configuration();
         SessionFactory cf = cfg.configure().buildSessionFactory();
         Session session = cf.openSession();
         session.beginTransaction();
-        session.save(u);
+        session.save(playerDataEntity);
         session.getTransaction().commit();
         session.close();
         cf.close();

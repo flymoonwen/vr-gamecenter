@@ -11,5 +11,157 @@
     <schema id="6" name="sakila"/>
     <schema id="7" name="sys"/>
     <schema id="8" name="world"/>
+    <schema id="9" name="db_account"/>
+    <schema id="10" name="quest-data"/>
+    <schema id="11" name="vm_db"/>
+    <schema id="12" name="vr_db_test"/>
+    <table id="13" parent="1" name="game_acount"/>
+    <table id="14" parent="1" name="player_data"/>
+    <table id="15" parent="1" name="quest"/>
+    <table id="16" parent="1" name="quest_data"/>
+    <table id="17" parent="1" name="worldmap_data"/>
+    <column id="18" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="19" parent="13" name="userName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="20" parent="13" name="email">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="21" parent="13" name="password">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="22" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="23" parent="14" name="playerId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="24" parent="14" name="username">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="25" parent="14" name="PRIMARY">
+      <columns>playerId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="26" parent="15" name="clientQuestId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="27" parent="15" name="mainQuestId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="28" parent="15" name="userId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="29" parent="15" name="clientQuestStatus">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="30" parent="15" name="activateTime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="31" parent="15" name="finishTime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="32" parent="15" name="PRIMARY">
+      <columns>clientQuestId
+mainQuestId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="33" parent="16" name="clientQuestId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="34" parent="16" name="mainQuestId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="35" parent="16" name="desc">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="36" parent="16" name="job">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="37" parent="16" name="simulationUrl">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="38" parent="16" name="planTimeTotalSeconds">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="39" parent="16" name="dialog">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="40" parent="16" name="questAction">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="41" parent="16" name="preQuest">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="42" parent="16" name="postQuest">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="43" parent="16" name="type">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="44" parent="16" name="questNpcId">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="45" parent="16" name="npcPosition">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="46" parent="16" name="isAutoFinish">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="47" parent="16" name="updateMovieName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="48" parent="16" name="audioId">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="49" parent="16" name="PRIMARY">
+      <columns>clientQuestId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="50" parent="17" name="worldMapId">
+      <mandatory>1</mandatory>
+      <data-type>int(255)|0</data-type>
+    </column>
+    <column id="51" parent="17" name="type">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="52" parent="17" name="characterType">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="53" parent="17" name="initX">
+      <data-type>float(12,4)|0</data-type>
+    </column>
+    <column id="54" parent="17" name="initY">
+      <data-type>float(12,4)|0</data-type>
+    </column>
+    <column id="55" parent="17" name="initZ">
+      <data-type>float(12,4)|0</data-type>
+    </column>
+    <column id="56" parent="17" name="desc">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="57" parent="17" name="prefabName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="58" parent="17" name="isMovable">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="59" parent="17" name="PRIMARY">
+      <columns>worldMapId
+type</columns>
+      <primary>1</primary>
+    </key>
   </database-model>
 </dataSource>

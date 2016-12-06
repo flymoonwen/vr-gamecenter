@@ -13,9 +13,10 @@
         <!--设置数据库的连接url:jdbc:mysql://localhost/hibernate,其中localhost表示mysql服务器名称，此处为本机，    hibernate是数据库名-->
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/game</property>
         <!--连接数据库是用户名-->
+        <property name="connection.username">root</property><!-- 数据库用户名 -->
+        <property name="connection.password">flymoonwen</property><!-- 数据库密码 -->
+
         <!--连接数据库是密码-->
-        <property name="connection.username">root</property>
-        <property name="connection.password">flymoonwen</property>
 
         <!--数据库连接池的大小-->
         <property name="hibernate.connection.pool.size">20</property>
@@ -34,10 +35,12 @@
 
         <!--hibernate.dialect 只是Hibernate使用的数据库方言,就是要用Hibernate连接那种类型的数据库服务器。-->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-
         <!--指定映射文件为“hibernate/ch1/UserInfo.hbm.xml”-->
-        <mapping class="gamecenter.db.entity.ArmorEntity"/>
-        <mapping class="gamecenter.db.entity.UserEntity"/>
+
+
+
+        <mapping class="gamecenter.db.entity.PlayerDataEntity"/>
+
 
 
     </session-factory>
